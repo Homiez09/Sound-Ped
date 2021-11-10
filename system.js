@@ -7,8 +7,9 @@ const sound = [
     {sound: "./audioclips/wan_pra_wan_jao_mai_ven.mp3", label: "วันพระวันเจ้าไม่เว้นกันเลย"},
     {sound: "./audioclips/yak_ja_doo_tae_hee.mp3", label: "อยากจะดูแต่xี"},
     {sound: "./audioclips/55555.mp3", label: "ขำ (หึหึหึ)"},
-    {sound: "./audioclips/pen-a-rai-kan.mp3", label: "เป็นอะไรกัน"}
-]
+    {sound: "./audioclips/pen-a-rai-kan.mp3", label: "เป็นอะไรกัน"},
+    {sound: "./audioclips/kon_tee_nai_puak_nai_pen_kon_jung_wat_r_rai_gert_wan_nai.mp3", label: "คนที่ไหนพวกท่านเป็นคนจังหวัดอะไรเกิดวันไหนเกิดปีไหนเกิดปีจอหรือปีอะไรครับผมไม่เข้าใจ"},
+] 
 
 function play(number){
     var audio = new Audio(sound[number].sound);
