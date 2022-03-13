@@ -1,4 +1,4 @@
-let buttonCreateEiei = document.getElementById('loopMePlease');
+let buttonCreateEiei = document.getElementById('loopMePlease'); 
 
 const sound = [
     {sound: "./audioclips/sa_wad_dee-krub.mp3", label: "สวัสดีครับ"},
@@ -9,9 +9,11 @@ const sound = [
     {sound: "./audioclips/55555.mp3", label: "ขำ (หึหึหึ)"},
     {sound: "./audioclips/pen-a-rai-kan.mp3", label: "เป็นอะไรกัน"},
     {sound: "./audioclips/kon_tee_nai_puak_nai_pen_kon_jung_wat_r_rai_gert_wan_nai.mp3", label: "คนที่ไหนพวกท่านเป็นคนจังหวัดอะไรเกิดวันไหนเกิดปีไหนเกิดปีจอหรือปีอะไรครับผมไม่เข้าใจ"},
+    {sound: "./audioclips/mai_kao_jai.mp3", label: "ไม่เข้าใจ"},
 ] 
 
-function play(number){
+play = (number) => {
+    console.log('playing sound name: ' + sound[number].label);
     var audio = new Audio(sound[number].sound);
     audio.play();
 }
@@ -21,7 +23,17 @@ for (var i = 0; i < sound.length; i++) {
     output += "<div class='col-md-2'>";
     output += "<button class='uwu btn btn-outline-primary' onclick='play(" + i + ");'>" + sound[i].label + "</button>";
     output += "</div>";
-    console.log(i)
+    console.log('loading button' + i);
+}
+
+loadSound = (i) => {
+    var audio = new Audio(sound[i].sound);
+    console.log('loading sound name: ' + sound[i].label);
+    return audio;
 }
 
 buttonCreateEiei.innerHTML = output;
+
+for (let i = 0; i < sound.length; i++) {
+    window.onload = loadSound(i);
+}
