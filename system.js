@@ -12,9 +12,15 @@ const sound = [
     {sound: "./audioclips/mai_kao_jai.mp3", label: "ไม่เข้าใจ"},
 ] 
 
+loadSound = (i) => {
+    var audio = new Audio(sound[i].sound);
+    console.log('loading sound name: ' + sound[i].label);
+    return audio;
+}
+
 play = (number) => {
+    var audio = loadSound(number);
     console.log('playing sound name: ' + sound[number].label);
-    var audio = new Audio(sound[number].sound);
     audio.play();
 }
 
@@ -26,11 +32,6 @@ for (var i = 0; i < sound.length; i++) {
     console.log('loading button' + i);
 }
 
-loadSound = (i) => {
-    var audio = new Audio(sound[i].sound);
-    console.log('loading sound name: ' + sound[i].label);
-    return audio;
-}
 
 buttonCreateEiei.innerHTML = output;
 
